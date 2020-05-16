@@ -5,6 +5,7 @@ def lambda_handler(event, context):
 
     # Get list of regions
     ec2_client = boto3.client('ec2')
+    # Create a list with the names of the regions
     regions = [region['RegionName']
                for region in ec2_client.describe_regions()['Regions']]
 
